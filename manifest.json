@@ -1,0 +1,12 @@
+{
+    "name": "NYtimes prefetcher",
+    "version": "1.0",
+    "description": "Insert prefetch tags in nytimes",
+    "content_scripts": [
+        {
+            "matches": ["http://www.nytimes.com/"],
+            "js": ["prefetch_nytimes.js"],
+            "run_at": "document_end"
+        }
+    ]
+}
