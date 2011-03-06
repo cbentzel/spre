@@ -1,14 +1,22 @@
 function addPreloadToElement(elem, url) {
-    elem.onmouseover = function() {
-        // Would be good to only do this when over for a bit.
-        if (!elem.prefetchLink) {
-            var prefetchLink = document.createElement("link");
-            prefetchLink.setAttribute("rel", "prefetch");
-            prefetchLink.setAttribute("href", url);
-            elem.appendChild(prefetchLink);
-            elem.prefetchLink = prefetchLink;
+    var removePrefetchLink = function(elem) {
+        if (elem.prefetchLink) {
+            elem.removeChild(elem.prefetchLink);
+            elem.prefetchLink = undefined;
         }
     }
+    var jquery_obj = $(elem);
+    jquery_obj.mouseenter(function() {
+        removePrefetchLink(elem);
+        var prefetchLink = document.createElement("link");
+        prefetchLink.setAttribute("rel", "prefetch");
+        prefetchLink.setAttribute("href", url);
+        elem.appendChild(prefetchLink);
+        elem.prefetchLink = prefetchLink;
+    });
+    jquery_obj.mouseleave(function() {
+        removePrefetchLink(elem);
+    });
 }
 
 function addPreloadToStory(story) {
