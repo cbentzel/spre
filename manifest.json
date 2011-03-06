@@ -7,6 +7,11 @@
             "matches": ["http://www.nytimes.com/*"],
             "js": ["jquery-1.5.1.js", "prefetch_core.js", "prefetch_nytimes.js"],
             "run_at": "document_end"
+        },
+        {
+            "matches": ["http://news.google.com/*"],
+            "js": ["jquery-1.5.1.js", "prefetch_core.js", "google_news.js"],
+            "run_at": "document_end"
         }
     ]
 }
