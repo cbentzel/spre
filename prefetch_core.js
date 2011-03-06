@@ -15,6 +15,9 @@ function addPreloadToElement(elem, url) {
     }
     var hover_delay_milliseconds = 300;
     var jquery_obj = $(elem);
+    // Using mousenter and mouseleave rather than onmouseover
+    // so this event is not triggered when child elements of elem
+    // are entered or exited.
     jquery_obj.mouseenter(function() {
         elem.delayed_prefetch = setTimeout(function() {
             elem.delayed_prefetch = undefined;
