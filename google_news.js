@@ -6,10 +6,7 @@ function prefetchTitle(title) {
 
 function prefetchTopStories() {
     var titles = document.getElementsByClassName("title sel");
-    var title_length = titles.length;
-    for (var i = 0; i < title_length; ++i) {
-        prefetchTitle(titles[i]);
-    }
+    for_each_do(titles, prefetchTitle);
 }
 
 function prefetchBlendedWrapper(blended_wrapper) {
@@ -23,10 +20,7 @@ function prefetchBlendedWrapper(blended_wrapper) {
 
 function prefetchBlendedWrappers() {
     var blended_wrappers = document.getElementsByClassName("blended-wrapper");
-    var blended_wrappers_length = blended_wrappers.length;
-    for (var i = 0; i < blended_wrappers_length; ++i) {
-        prefetchBlendedWrapper(blended_wrappers[i]);
-    }
+    for_each_do(blended_wrappers, prefetchBlendedWrapper);
 }
 
 prefetchTopStories();

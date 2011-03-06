@@ -12,10 +12,7 @@ function addPreloadToStory(story) {
 
 function preloadStories() {
     var stories = document.getElementsByClassName("story");
-    var story_length = stories.length;
-    for (var i = 0; i < story_length; ++i) {
-        addPreloadToStory(stories[i]);
-    }
+    for_each_do(stories, addPreloadToStory);
 }
 
 function addPreloadToAnchor(anchor) {
@@ -23,10 +20,7 @@ function addPreloadToAnchor(anchor) {
 }
 
 function addPreloadToAnchors(anchors) {
-    var anchor_length = anchors.length;
-    for (var i = 0; i < anchor_length; ++i) {
-        addPreloadToAnchor(anchors[i]);
-    }
+    for_each_do(anchors, addPreloadToAnchor);
 }
 
 function preloadNext() {
@@ -49,18 +43,12 @@ function addPreloadToTabEntry(tab_entry) {
 
 function addPreloadToTab(tab) {
     var entries = tab.getElementsByTagName("li");
-    var entry_length = entries.length;
-    for (var i = 0; i < entry_length; ++i) {
-        addPreloadToTabEntry(entries[i]);
-    }
+    for_each_do(entries, addPreloadToTabEntry);
 }
 
 function preloadTabs() {
     var tabs = document.getElementsByClassName("tabs");
-    var tab_length = tabs.length;
-    for (var i = 0; i < tab_length; ++i) {
-        addPreloadToTab(tabs[i]);
-    }
+    for_each_do(tabs, addPreloadToTab);
 }
 
 preloadStories();

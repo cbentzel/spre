@@ -29,3 +29,10 @@ function addPreloadToElement(elem, url) {
         removePrefetchLink();
     });
 }
+
+function for_each_do(node_list, fn) {
+    var node_list_len = node_list.length;
+    for (var i = 0; i < node_list_len; ++i) {
+        fn(node_list[i]);
+    }
+}
