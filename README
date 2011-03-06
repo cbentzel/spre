@@ -1,0 +1,8 @@
+Chrome extension which adds prefetch hints to certain web sites.
+
+Currently supported sites are:
+  - nytimes.com
+  - news.google.com
+
+When certain elements in a page are hovered over for more than 300ms,
+a prefetch hint for a likely resource is added.
