@@ -5,7 +5,7 @@
     "content_scripts": [
         {
             "matches": ["http://www.nytimes.com/*"],
-            "js": ["jquery-1.5.1.js", "prefetch_nytimes.js"],
+            "js": ["jquery-1.5.1.js", "prefetch_core.js", "prefetch_nytimes.js"],
             "run_at": "document_end"
         }
     ]
